@@ -35,5 +35,12 @@ class Crud_model extends CI_Model
         $this->db->delete("crud");
         return true;
     }
+
+    // Multiple checkbox insert
+    function multisave($user_id,$category)
+	{
+		$query="insert into user_cat values($user_id,$category)";
+		$this->db->query($query);
+	}
 	
 }

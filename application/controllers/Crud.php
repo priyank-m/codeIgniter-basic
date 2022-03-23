@@ -12,7 +12,8 @@ class Crud extends CI_Controller
 	/*load Model*/
 	$this->load->model('Crud_model');
 	}
-        /*Insert*/
+
+    /*Insert*/
 	public function savedata()
 	{
 		/*load registration view form*/
@@ -73,6 +74,47 @@ class Crud extends CI_Controller
         echo "Error !";
     }
     }
+
+    // Import Excel
+    public function importdata()
+	{ 
+		$this->load->view('import_data');
+		if(isset($_POST["submit"]))
+		{
+			$file = $_FILES['file']['tmp_name'];
+			$handle = fopen($file, "r");
+			$c = 0;
+			while(($filesop = fgetcsv($handle, 1000, ",")) !== false)
+			{
+				$fname = $filesop[0];
+				$lname = $filesop[1];
+				if($c<>0){					/* SKIP THE FIRST ROW */
+					$this->Crud_model->saverecord($fname,$lname);
+				}
+				$c = $c + 1;
+			}
+			echo "sucessfully import data !";
+				
+		}
+	}
+
+
+	// Multiple checkbox insert
+	public function multicheck()
+	{ 
+			$this->load->view('multicheck_insert');
+			if(isset($_POST['save']))
+			{
+				$user_id=1;/* Pass the userid here */
+				$checkbox = $_POST['check']; 
+				for($i=0;$i<count($checkbox);$i++){
+					$category_id = $checkbox[$i];
+					$this->Crud_model->multisave($user_id,$category_id);/* Call the modal */
+					
+				}
+				echo "Data added successfully!";
+			}
+	}
         
 }
 ?>

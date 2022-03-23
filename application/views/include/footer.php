@@ -1,1 +1,1 @@
-<h3>Footer</h3>
+<center><h3>CI all rights reserved@2022</h3></center>

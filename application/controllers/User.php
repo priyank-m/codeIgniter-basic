@@ -85,6 +85,32 @@ class User extends CI_Controller
 		}
 		$this->load->view('change_password');	
 	}
+
+    public function forgot_pass()
+	{
+		if($this->input->post('forgot_pass'))
+		{
+			$email=$this->input->post('email');
+			$que=$this->db->query("select password,email from user_login where email='$email'");
+			$row=$que->row();
+			$user_email=$row->email;
+			if((!strcmp($email, $user_email))){
+			$pass=$row->password;
+				/*Mail Code*/
+				$to = $user_email;
+				$subject = "Password";
+				$txt = "Your password is $pass .";
+				$headers = "From: priyank.m@upsquare.in";
+
+				mail($to,$subject,$txt,$headers);
+				}
+			else{
+			$data['error']="Invalid Email ID !";
+			}
+		
+	    }   
+	   $this->load->view('forgot_password',@$data);	
+    }
 	
 	
 }
