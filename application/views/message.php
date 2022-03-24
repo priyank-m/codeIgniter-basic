@@ -14,9 +14,7 @@
 
 <tr>
     <td>Enter Your Message</td>
-   <td><textarea rows="4" cols="50" name="message">
-
-</textarea></td>
+   <td><textarea rows="4" cols="50" name="message" readonly>Hello this is a test message from spring edge</textarea></td>
   </tr>
 
  <tr>

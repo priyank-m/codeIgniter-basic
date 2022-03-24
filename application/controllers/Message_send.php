@@ -1,12 +1,12 @@
 <!-- 
 For API
-    
-https://control.msg91.com
 
-email - priyank.m@upsquare.in -->
+Here is trail SMS login credentials:
+URL: http://web.springedge.com/members/login
+Username: springedgedemo
+Password: 9ot3HDsp#2
 
-
-
+-->
 <?php  
 class Message_send extends CI_Controller 
 {
@@ -14,8 +14,9 @@ class Message_send extends CI_Controller
 	{
 	/*call CodeIgniter's default Constructor*/
 	parent::__construct();
-           }
-public function message()
+    }
+
+    public function message()
 	{
 		/*load registration view form*/
 		$this->load->view('message');
@@ -23,52 +24,27 @@ public function message()
 		/*Check submit button */
 		if($this->input->post('save'))
 		{
-		$phone=$this->input->post('phone');
-$user_message=$this->input->post('message');
-	    /*Your authentication key*/
-$authKey = "374846AmVa8Zd1623b185fP1";
-/*Multiple mobiles numbers separated by comma*/
-$mobileNumber = $phone;
-/*Sender ID,While using route4 sender id should be 6 characters long.*/
-$senderId = "ABCDEF";
-/*Your message to send, Add URL encoding here.*/
-$message = $user_message;
-/*Define route */
-$route = "route=4";
-/*Prepare you post parameters*/
-$postData = array(
-'authkey' => $authKey,
-'mobiles' => $mobileNumber,
-'message' => $message,
-'sender' => $senderId,
-'route' => $route
-);
-/*API URL*/
-$url="https://control.msg91.com/api/sendhttp.php";
-/* init the resource */
-$ch = curl_init();
-curl_setopt_array($ch, array(
-CURLOPT_URL => $url,
-CURLOPT_RETURNTRANSFER => true,
-CURLOPT_POST => true,
-CURLOPT_POSTFIELDS => $postData
-/*,CURLOPT_FOLLOWLOCATION => true*/
-));
-/*Ignore SSL certificate verification*/
-curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
-/*get response*/
-$output = curl_exec($ch);
-/*Print error if any*/
-if(curl_errno($ch))
-{
-echo 'error:' . curl_error($ch);
-}
-curl_close($ch);
-		
-		
-			
-		echo "Message Sent Successfully !";
+			$mobileno = $this->input->post('phone');
+			$message = $this->input->post('message');
+			$sender = 'SEDEMO'; 
+			$apikey = '6ojfpx3g160a1vv2279dtl3m42x9qekd';
+			$baseurl = 'https://instantalerts.co/api/web/send?apikey='.$apikey;
+
+			//$url = "https://instantalerts.co/api/web/send?apikey=6ojfpx3g160a1vv2279dtl3m42x9qekd&sender=SEDEMO&to=919067232894&message=Hello%2C+this+is+a+test+message+from+spring+edge";   
+			$url = $baseurl.'&sender='.$sender.'&to='.$mobileno.'&message='.$message;  
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_POST, false);
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response = curl_exec($ch);
+			curl_close($ch);
+
+			// Use file get contents when CURL is not installed on server.
+			if(!$response){
+				$response = file_get_contents($url);
+			}else{
+				echo "message send";
+			}
 		}
 	}
 }

@@ -47,6 +47,27 @@
             <a href="Sendmail/send_mail" class="btn btn-primary btn-lg btn-block">Send Mail</a>
         </div>
     </div>
+
+    <div class="row my-5">
+        <div class="col-2">
+            <a href="Message_send/message" class="btn btn-primary btn-lg btn-block">SMS Send</a>
+            </div>
+            <div class="col-2">
+            <a href="Otp_send/otp_message" class="btn btn-primary btn-lg btn-block">OTP Send</a>
+            </div>
+            <div class="col-2">
+            <a href="Pagination/" class="btn btn-primary btn-lg btn-block">Pagination</a>
+            </div>
+            <div class="col-2">
+            <a href="Google_login/login" class="btn btn-primary btn-lg btn-block">Login With Google</a>
+            </div>
+            <div class="col-2">
+            <a href="Crud/multicheck" class="btn btn-primary btn-lg btn-block">Multiple Checkbox Insert</a>
+            </div>
+            <div class="col-2">
+            <a href="Sendmail/send_mail" class="btn btn-primary btn-lg btn-block">Send Mail</a>
+        </div>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
