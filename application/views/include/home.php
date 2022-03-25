@@ -62,10 +62,10 @@
             <a href="Google_login/login" class="btn btn-primary btn-lg btn-block">Login With Google</a>
             </div>
             <div class="col-2">
-            <a href="Crud/multicheck" class="btn btn-primary btn-lg btn-block">Multiple Checkbox Insert</a>
+            <a href="HtmltoPDF/" class="btn btn-primary btn-lg btn-block">HTML To PDF Using Dompdf</a>
             </div>
             <div class="col-2">
-            <a href="Sendmail/send_mail" class="btn btn-primary btn-lg btn-block">Send Mail</a>
+            <a href="Ajax_home/" class="btn btn-primary btn-lg btn-block">AJAX CRUD</a>
         </div>
     </div>
 </div>
