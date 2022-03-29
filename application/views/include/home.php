@@ -76,6 +76,12 @@
             <div class="col-2">
             <a href="Attachment/CreateAttachment" class="btn btn-primary btn-lg btn-block">File Upload (AJAX)</a>
             </div>
+            <div class="col-2">
+            <a href="Test_api" class="btn btn-primary btn-lg btn-block">CRUD API (AJAX)</a>
+            </div>
+            <div class="col-2">
+            <a href="ChartController" class="btn btn-primary btn-lg btn-block">HighChart</a>
+            </div>
         </div>
     </div>
 </div>
