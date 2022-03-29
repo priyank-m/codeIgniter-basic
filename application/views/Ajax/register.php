@@ -48,6 +48,7 @@ $(document).ready(function() {
 			$.ajax({
 				url: "<?php echo base_url("Ajax_crud/savedata");?>",
 				type: "POST",
+				cache: false,
 				data: {
 					type: 1,
 					name: name,
@@ -55,13 +56,14 @@ $(document).ready(function() {
 					phone: phone,
 					city: city
 				},
-				cache: false,
 				success: function(dataResult){
 					var dataResult = JSON.parse(dataResult);
 					if(dataResult.statusCode==200){
 						$("#butsave").removeAttr("disabled");
-						$('#fupForm').reset();
-                        window.location.href = "<?php echo base_url("Ajax_crud/view");?>";
+						$('#fupForm').find('input:text').val('');
+						$("#success").show();
+						$('#success').html('Data added successfully !'); 	
+                        window.location.href = "<?php echo base_url("Ajax_home");?>";					
 					}
 					else if(dataResult.statusCode==201){
 					   alert("Error occured !");

@@ -68,6 +68,16 @@
             <a href="Ajax_home/" class="btn btn-primary btn-lg btn-block">AJAX CRUD</a>
         </div>
     </div>
+
+    <div class="row my-5">
+        <div class="col-2">
+            <a href="Employee/" class="btn btn-primary btn-lg btn-block">Datatable View</a>
+            </div>
+            <div class="col-2">
+            <a href="Attachment/CreateAttachment" class="btn btn-primary btn-lg btn-block">File Upload (AJAX)</a>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
