@@ -82,6 +82,12 @@
             <div class="col-2">
             <a href="ChartController" class="btn btn-primary btn-lg btn-block">HighChart</a>
             </div>
+            <div class="col-2">
+            <a href="cookie" class="btn btn-primary btn-lg btn-block">Cookie</a>
+            </div>
+            <div class="col-2">
+            <a href="cachecontroller" class="btn btn-primary btn-lg btn-block">Page Cache</a>
+            </div>
         </div>
     </div>
 </div>
